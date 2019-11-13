@@ -1,0 +1,20 @@
+#quadratic quations must be a positive number
+
+import math
+
+def main():
+    print("this program finds real solutions to quadratic equations")
+
+    a = float(input("enter a coefficient a:"))
+    b = float(input("enter coefficient b:"))
+    c = float(input("enter coefficient c:"))
+    #run only if code is greater or qual to zero
+    discrim = b * b - 4 * a *c
+    if(discrim >= 0):
+        discRoot = math.sqrt(b * b -4 *a *c)
+        root1 = (-b + discRoot) / (2* a)
+        root2 = (-b - discRoot) / (2 * a)
+    
+    print ("\nThe solutions are:", root1, root2) 
+                    
+main()
