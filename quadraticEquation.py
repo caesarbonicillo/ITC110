@@ -10,11 +10,12 @@ def main():
     c = float(input("enter coefficient c:"))
     #run only if code is greater or qual to zero
     discrim = b * b - 4 * a *c
-    if(discrim >= 0):
+    if(discrim < 0):
+        print("no real roots") # should always put the default in before any real work that way it doesn't do any unnessesary work.
+    else:
         discRoot = math.sqrt(b * b -4 *a *c)
         root1 = (-b + discRoot) / (2* a)
         root2 = (-b - discRoot) / (2 * a)
-    
-    print ("\nThe solutions are:", root1, root2) 
-                    
+        print ("\nThe solutions are:", root1, root2)
+        
 main()
