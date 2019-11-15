@@ -1,0 +1,19 @@
+#calculate miles per gallon
+#Enter miles Driven
+#Enter gallons of gas used
+
+#if user puts negative for gallons or miles, tell user needs to be a positive number same
+
+
+def main():
+    miles = float(input("Please enter in Miles driven: "))
+    gas = float(input("Please enter in gas driven: "))
+
+    mpg = miles/gas
+    
+    if miles >= 0 and gas >= 0:
+        print(mpg)
+    else:
+        print("miles and gallons must not be 0 or a negative") 
+
+main()
