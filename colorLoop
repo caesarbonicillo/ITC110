@@ -1,0 +1,18 @@
+from graphics import *
+def main():
+    win = GraphWin("My circle", 500, 500)
+
+    while True:
+        key = win.getKey()
+        if key == "q":
+            break
+        if key =="r":
+            win.setBackground("pink")
+        elif key =="w":
+            win.setBackground("white")
+        elif key =="g":
+            win.setBackground("green")
+        elif key =="b":
+            win.setBackground("lightblue")
+
+    win.close()
