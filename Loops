@@ -1,0 +1,116 @@
+For Loops
+
+for <var> in <sequence>:
+   <body>
+   
+ for i in range
+ 
+ ## sudo code
+Input the count of the numbers, n
+Initialize sum to 0
+Loop n times
+Input a number, x
+Add x to sum
+Output average as sum/n
+
+Most basic of Loops takes an input restricted in the range:
+def main():
+	n = int(input("How many numbers do you have?"))
+	sum = 0.0
+	for i in range (n):
+		x = float(input("enter a number >>"))
+		sum = sum + x
+	print("\nThe average of the numbers is", sum / n)
+  
+  **********************************************************
+  While Loops
+  
+  while <condition>:
+   <body>
+   
+   condition is a boolean true expression. 
+
+example of a while or indefinite loop
+
+def main():   
+i = 0
+while i <= 10:
+    print(i)
+    i = i + 1
+
+BEWARE OF INFINITE LOOPS
+
+THIS example counts inputed numbers then Averages them out
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+def main():
+	sum = 0.0
+	count = 0
+	moredata = "yes"
+	while moredata[0] == "y":### checks first letter is y or Y doesn't matter about the "es" of "Yes"
+		x = float(input("enter a number >> "))
+		sum = sum + x
+		count = count + 1
+		moredata = input("do you have more numbers (yes or no)? ")
+		moredata = moredata.lower()
+	print("\nThe average of the numbers is", sum /count)
+  
+  SENTINEL LOOP
+###########################################################################################
+A way of terminating a loop.
+
+def main():
+	sum = 0
+	count = 0
+	x = float(input("enter a number (negative to quit) >> " ))
+	while x >= 0: ############################# right here is the sentinel must be a negative number and not a letter or just " - "
+		sum = sum + x
+		count = count +1
+		x = float(input("enter a number (negative to quit) >> " ))
+	print ("\nThe average of the numbers is", sum / count)
+
+######Note a negative number will never be able to enter the loop 
+######Can also use an empty string 
+
+Here is a sentinel with an empty string 
+
+def main():
+	sum = 0
+	count = 0
+	xStr = input("Enter a number (<enter to quit>) .. " )
+	while xStr != "":
+		x = float(xStr)
+		sum = sum + x
+		count = count + 1
+		xStr = input("Enter a number (<enter> to quit) .. ")
+	print("\nThe average of the numbers is, ", sum /count)
+
+
+###########################################################################
+File loops 
+
+def main():
+    fileName = input("What file are the numbers in? ")
+    infile = open(fileName,'r') ####'r' means read only "w" would mean write
+    sum = 0.0
+    count = 0
+    line = infile.readline()
+    while line != "":
+        sum = sum + float(line)
+        count = count + 1
+        line = infile.readline() #### Important the .realine
+    print("\nThe average of the numbers is", sum / count)
+    
+def main():
+    fileName = input("What file are the numbers in? ")
+    infile = open(fileName,'r')
+    sum = 0.0
+    count = 0
+    line = infile.readline()
+    while line != "":
+        # update sum and count for values in line
+        for xStr in line.split(","): ############################## same code as before but adds the split function to grab numbs on more than one line
+            sum = sum + float(xStr)
+            count = count + 1
+        line = infile.readline()
+    print("\nThe average of the numbers is", sum / count
+
