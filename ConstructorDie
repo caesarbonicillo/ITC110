@@ -1,0 +1,59 @@
+#Constructor in classes
+
+#Circle object with Class
+#from graphics import *
+#myCircle = Circle(Point(0,0),20)
+# myCircle is an object, Circle and Point are Classes that are instantiated in myCircle
+
+from random import randrange
+## random is coming from a built in Python Packages
+from graphics import GraphWin, Point
+from button import Button
+from dieview import DieView
+###These are imported from modules in the file manager
+
+
+
+class MSDie:
+
+    def __init__(self,sides): ### REMEMBER the __init__
+        self.sides = sides
+        self.value = 1
+        ###instance variables here's 2 examples. an instance variable always starts with self.Whatever
+
+    def roll(self):
+        self.value = randrange(1, self.sides+1)
+    ### This uses the random genrator that's why it only needs one value starts at one 
+        
+    def getValue(self):
+        return self.value
+    
+    def setValue(self, value):
+        self.value = value
+
+### for constructor self!!!!!!! is always the first value, of the variables
+
+def main():
+    #create new instance of the MSDie Class
+    msd = MSDie(9)
+    ##start working with the die this gives the Die 1-9 possiblity NOT 9 faces
+    #######print(msd.getValue()) try this to see the default value, should be 1 since it's in the constructor
+
+    for i in range(10):
+        msd.roll()
+        print(msd.getValue())
+
+###Create a 2nd object
+        
+    msd2 =MSDie(20)
+    
+    print ("Second die")
+
+    for i in range(5):
+        msd2.roll()
+        print(msd2.getValue())
+
+
+    
+    
+        
